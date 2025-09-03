@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoreo Inrows</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/inrows.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container mt-5">
+        <h1>Registro de Inrows</h1>
+        
+        <!-- Formulario para registrar datos de inrows -->
+        <div class="card mb-4">
+            <div class="card-header">Registrar Inrows</div>
+            <div class="card-body">
+                <form id="inrows-form">
+                    <div class="mb-3">
+                        <label for="fpm" class="form-label">FPM</label>
+                        <input type="number" class="form-control" id="fpm" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="temperatura" class="form-label">Temperatura (°C)</label>
+                        <input type="number" class="form-control" id="temperatura" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="observaciones" class="form-label">Observaciones</label>
+                        <textarea class="form-control" id="observaciones" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabla para mostrar datos de inrows registrados -->
+        <div class="card">
+            <div class="card-header">Datos Registrados de Inrows</div>
+            <div class="card-body">
+                <table class="table table-striped" id="inrows-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">FPM</th>
+                            <th scope="col">Temperatura (°C)</th>
+                            <th scope="col">Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los datos se llenarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/modules/inrows.js"></script>
+    <script>
+        // Cargar el contenido de la barra de navegación y pie de página
+        $(function(){
+            $("#navbar-placeholder").load("navbar.html");
+            $("#footer-placeholder").load("footer.html");
+        });
+    </script>
+</body>
+</html>

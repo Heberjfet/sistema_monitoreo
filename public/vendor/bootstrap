@@ -1,0 +1,4 @@
+El directorio `/monitor-centro-datos-frontend/monitor-centro-datos-frontend/public/vendor/bootstrap` debe contener los archivos de Bootstrap. Sin embargo, como no se especifica qué archivos de Bootstrap incluir, aquí te dejo un comentario indicando que este directorio está destinado a contener esos archivos.
+
+public/vendor/bootstrap
+<!-- Este directorio está destinado a contener los archivos de Bootstrap utilizados en el proyecto. -->

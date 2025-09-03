@@ -1,0 +1,305 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+h1 {
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Estilos específicos para la página de luces */
+
+/* Variables específicas para luces */
+:root {
+    --luces-primary: #ffc107;
+    --luces-secondary: #fd7e14;
+    --luces-success: #28a745;
+    --luces-warning: #ffc107;
+    --luces-danger: #dc3545;
+    --luces-info: #17a2b8;
+}
+
+/* Animaciones específicas */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 193, 7, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(255, 193, 7, 0.3); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Header específico de luces */
+.bg-warning {
+    background: linear-gradient(135deg, #ffc107, #fd7e14) !important;
+}
+
+/* Cards de estadísticas */
+.card.bg-light:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Formulario mejorado */
+.form-control:focus {
+    border-color: var(--luces-primary);
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+.form-select:focus {
+    border-color: var(--luces-primary);
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+}
+
+/* Botones específicos */
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #004085);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Tabla mejorada */
+.table {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(255, 193, 7, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.table-dark th {
+    background: linear-gradient(135deg, #343a40, #495057);
+    border: none;
+}
+
+/* Estados de lux */
+.lux-normal {
+    color: var(--luces-success);
+    font-weight: bold;
+}
+
+.lux-bajo {
+    color: var(--luces-warning);
+    font-weight: bold;
+}
+
+.lux-critico {
+    color: var(--luces-danger);
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.lux-alto {
+    color: var(--luces-info);
+    font-weight: bold;
+}
+
+/* Alertas personalizadas */
+.alert.border-left-primary {
+    border-left: 4px solid #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.alert.border-left-warning {
+    border-left: 4px solid #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.alert.border-left-danger {
+    border-left: 4px solid #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.alert.border-left-success {
+    border-left: 4px solid #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+/* Badges personalizados */
+.badge.fs-6 {
+    font-size: 1rem !important;
+}
+
+/* Iconos con efectos */
+.fa-lightbulb {
+    color: var(--luces-primary);
+    filter: drop-shadow(0 0 3px rgba(255, 193, 7, 0.3));
+}
+
+.fa-sun {
+    color: var(--luces-warning);
+    animation: glow 3s ease-in-out infinite;
+}
+
+/* Breadcrumb personalizado */
+.breadcrumb-item a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #0056b3;
+}
+
+/* Estados de zona */
+.zona-normal {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #155724;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.zona-alerta {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #856404;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.zona-critica {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #721c24;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    animation: pulse 2s infinite;
+}
+
+/* Botones de acción en tabla */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+}
+
+.btn-action {
+    margin: 0 0.125rem;
+    transition: all 0.2s ease;
+}
+
+.btn-action:hover {
+    transform: scale(1.1);
+}
+
+/* Loading spinner personalizado */
+.loading-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(255, 193, 7, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffc107;
+    animation: spin 1s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-6 {
+        font-size: 2rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .btn-lg {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+}
+
+/* Efectos de entrada para elementos */
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll personalizado para tablas */
+.table-responsive::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}

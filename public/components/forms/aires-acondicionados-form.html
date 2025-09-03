@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Aires Acondicionados</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/pages/aires-acondicionados.css">
+    <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Registro de Aires Acondicionados</h2>
+        <form id="airesAcondicionadosForm">
+            <div class="form-group">
+                <label for="tiempoUso">Tiempo de Uso (horas)</label>
+                <input type="number" class="form-control" id="tiempoUso" placeholder="Ingrese el tiempo de uso" required>
+            </div>
+            <div class="form-group">
+                <label for="observaciones">Observaciones</label>
+                <textarea class="form-control" id="observaciones" rows="3" placeholder="Ingrese observaciones"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+    </div>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/modules/aires-acondicionados.js"></script>
+</body>
+</html>

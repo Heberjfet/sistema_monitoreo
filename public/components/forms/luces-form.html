@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Luces</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/pages/luces.css">
+    <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Registro de Luces</h2>
+        <form id="lucesForm">
+            <div class="form-group">
+                <label for="luxes">Luxes:</label>
+                <input type="number" class="form-control" id="luxes" placeholder="Ingrese el valor de luxes" required>
+            </div>
+            <div class="form-group">
+                <label for="observacionesLuces">Observaciones:</label>
+                <textarea class="form-control" id="observacionesLuces" rows="3" placeholder="Ingrese observaciones"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+    </div>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/modules/luces.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aires Acondicionados - Monitoreo Centro de Datos</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/aires-acondicionados.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container mt-5">
+        <h1>Aires Acondicionados</h1>
+        <form id="aires-acondicionados-form">
+            <div class="mb-3">
+                <label for="tiempoUso" class="form-label">Tiempo de Uso (horas)</label>
+                <input type="number" class="form-control" id="tiempoUso" required>
+            </div>
+            <div class="mb-3">
+                <label for="observaciones" class="form-label">Observaciones</label>
+                <textarea class="form-control" id="observaciones" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+
+        <h2 class="mt-5">Registro de Aires Acondicionados</h2>
+        <div id="aires-acondicionados-table-placeholder"></div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/modules/aires-acondicionados.js"></script>
+    <script>
+        // Cargar componentes
+        $(function(){
+            $("#navbar-placeholder").load("navbar.html");
+            $("#footer-placeholder").load("footer.html");
+            $("#aires-acondicionados-table-placeholder").load("tables/aires-acondicionados-table.html");
+        });
+    </script>
+</body>
+</html>

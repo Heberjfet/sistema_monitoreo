@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lámparas de Emergencia - Monitoreo Centro de Datos</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/lamparas-emergencia.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <div class="container mt-5">
+        <h1>Lámparas de Emergencia</h1>
+        <form id="lamparas-emergencia-form">
+            <div class="form-group">
+                <label for="funcionamiento">Funcionamiento:</label>
+                <select class="form-control" id="funcionamiento" required>
+                    <option value="">Seleccione...</option>
+                    <option value="funcionando">Funcionando</option>
+                    <option value="no_funcionando">No Funcionando</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="lux">Lux:</label>
+                <input type="number" class="form-control" id="lux" placeholder="Ingrese el valor de lux" required>
+            </div>
+            <div class="form-group">
+                <label for="observaciones">Observaciones:</label>
+                <textarea class="form-control" id="observaciones" rows="3" placeholder="Ingrese observaciones"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+
+        <h2 class="mt-5">Registro de Lámparas de Emergencia</h2>
+        <div id="lamparas-emergencia-table-placeholder"></div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/modules/lamparas-emergencia.js"></script>
+    <script>
+        // Cargar componentes
+        $(function(){
+            $("#navbar-placeholder").load("components/navbar.html");
+            $("#footer-placeholder").load("components/footer.html");
+            $("#lamparas-emergencia-table-placeholder").load("components/tables/lamparas-emergencia-table.html");
+        });
+    </script>
+</body>
+</html>

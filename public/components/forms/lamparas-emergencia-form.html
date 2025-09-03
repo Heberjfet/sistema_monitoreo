@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Lámparas de Emergencia</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/pages/lamparas-emergencia.css">
+    <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Registro de Lámparas de Emergencia</h2>
+        <form id="lamparasEmergenciaForm">
+            <div class="form-group">
+                <label for="funcionamiento">Funcionamiento:</label>
+                <select class="form-control" id="funcionamiento" required>
+                    <option value="">Seleccione...</option>
+                    <option value="funcionando">Funcionando</option>
+                    <option value="no_funcionando">No Funcionando</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="lux">Lux:</label>
+                <input type="number" class="form-control" id="lux" placeholder="Ingrese el valor de lux" required>
+            </div>
+            <div class="form-group">
+                <label for="observaciones">Observaciones:</label>
+                <textarea class="form-control" id="observaciones" rows="3" placeholder="Ingrese observaciones"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+    </div>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/modules/lamparas-emergencia.js"></script>
+</body>
+</html>

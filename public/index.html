@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Monitoreo Centro de Datos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-server me-2"></i>Monitoreo Centro de Datos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-cog me-1"></i>Sistemas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="pages/luces.html"><i class="fas fa-lightbulb me-2"></i>Luces</a></li>
+                            <li><a class="dropdown-item" href="pages/inrows.html"><i class="fas fa-thermometer-half me-2"></i>Inrows</a></li>
+                            <li><a class="dropdown-item" href="pages/lamparas-emergencia.html"><i class="fas fa-exclamation-triangle me-2"></i>Lámparas de Emergencia</a></li>
+                            <li><a class="dropdown-item" href="pages/aires-acondicionados.html"><i class="fas fa-wind me-2"></i>Aires Acondicionados</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid mt-5 pt-3">
+        <!-- Header del Dashboard -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="bg-primary text-white p-4 rounded shadow">
+                    <h1 class="display-5 mb-0"><i class="fas fa-server me-3"></i>Centro de Control</h1>
+                    <p class="mb-0 fs-5">Monitoreo de infraestructura LARCAD</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards de estado general -->
+        <div class="row mb-4">
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-lightbulb fa-3x text-warning"></i>
+                        </div>
+                        <h5 class="card-title">Sistema de Iluminación</h5>
+                        <p class="text-muted">Estado general del sistema</p>
+                        <span class="badge bg-success">Operativo</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-thermometer-half fa-3x text-danger"></i>
+                        </div>
+                        <h5 class="card-title">Inrows</h5>
+                        <p class="text-muted">Control de temperatura</p>
+                        <span class="badge bg-warning">Alerta</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-exclamation-triangle fa-3x text-info"></i>
+                        </div>
+                        <h5 class="card-title">Lámparas de Emergencia</h5>
+                        <p class="text-muted">Sistema de respaldo</p>
+                        <span class="badge bg-success">Operativo</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-wind fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Aires Acondicionados</h5>
+                        <p class="text-muted">Control climático</p>
+                        <span class="badge bg-success">Operativo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel de acceso rápido -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-white">
+                        <h4 class="mb-0"><i class="fas fa-tachometer-alt me-2"></i>Acceso Rápido a Sistemas</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 mb-3">
+                                <a href="pages/luces.html" class="text-decoration-none">
+                                    <div class="card bg-light border-0 h-100 hover-card">
+                                        <div class="card-body text-center">
+                                            <i class="fas fa-lightbulb fa-2x text-warning mb-3"></i>
+                                            <h5 class="card-title">Monitoreo de Luces</h5>
+                                            <p class="text-muted small">Registro de luxes y observaciones</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-3">
+                                <a href="pages/inrows.html" class="text-decoration-none">
+                                    <div class="card bg-light border-0 h-100 hover-card">
+                                        <div class="card-body text-center">
+                                            <i class="fas fa-thermometer-half fa-2x text-danger mb-3"></i>
+                                            <h5 class="card-title">Monitoreo Inrows</h5>
+                                            <p class="text-muted small">FPM, temperatura y observaciones</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-3">
+                                <a href="pages/lamparas-emergencia.html" class="text-decoration-none">
+                                    <div class="card bg-light border-0 h-100 hover-card">
+                                        <div class="card-body text-center">
+                                            <i class="fas fa-exclamation-triangle fa-2x text-info mb-3"></i>
+                                            <h5 class="card-title">Lámparas de Emergencia</h5>
+                                            <p class="text-muted small">Funcionamiento, lux y observaciones</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6 mb-3">
+                                <a href="pages/aires-acondicionados.html" class="text-decoration-none">
+                                    <div class="card bg-light border-0 h-100 hover-card">
+                                        <div class="card-body text-center">
+                                            <i class="fas fa-wind fa-2x text-primary mb-3"></i>
+                                            <h5 class="card-title">Aires Acondicionados</h5>
+                                            <p class="text-muted small">Tiempo de uso y observaciones</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumen del estado -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-white">
+                        <h4 class="mb-0"><i class="fas fa-chart-line me-2"></i>Resumen del Estado</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info" role="alert">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <strong>Estado General:</strong> Todos los sistemas operando dentro de parámetros normales.
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-clock me-2"></i>Última Actualización</h6>
+                                <p class="text-muted" id="lastUpdate">--</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-user me-2"></i>Operador en Turno</h6>
+                                <p class="text-muted">Usuario Actual</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-white">
+                        <h4 class="mb-0"><i class="fas fa-bell me-2"></i>Alertas Recientes</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-warning alert-sm" role="alert">
+                            <small><i class="fas fa-exclamation-triangle me-1"></i> Temperatura Inrow 2 - 25°C</small>
+                        </div>
+                        <div class="alert alert-success alert-sm" role="alert">
+                            <small><i class="fas fa-check-circle me-1"></i> Todas las lámparas funcionando</small>
+                        </div>
+                        <div class="text-center">
+                            <small class="text-muted">Última verificación: hace 5 min</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Sistema de Monitoreo Centro de Datos - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Actualizar hora actual
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('lastUpdate').textContent = now.toLocaleString('es-ES');
+        }
+
+        updateTime();
+        setInterval(updateTime, 60000); // Actualizar cada minuto
+    </script>
+</body>
+</html>
