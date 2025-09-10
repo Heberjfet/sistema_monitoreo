@@ -6,69 +6,180 @@
     <title>Monitoreo Inrows</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/pages/inrows.css">
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <div id="navbar-placeholder"></div>
+    <!-- Navbar se cargará dinámicamente aquí -->
 
-    <div class="container mt-5">
-        <h1>Registro de Inrows</h1>
-        
-        <!-- Formulario para registrar datos de inrows -->
-        <div class="card mb-4">
-            <div class="card-header">Registrar Inrows</div>
-            <div class="card-body">
-                <form id="inrows-form">
-                    <div class="mb-3">
-                        <label for="fpm" class="form-label">FPM</label>
-                        <input type="number" class="form-control" id="fpm" required>
+    <div class="container mt-5 pt-4">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-thermometer-half"></i> Monitoreo Inrows</li>
+            </ol>
+        </nav>
+
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="bg-danger text-white p-4 rounded shadow">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1 class="display-6 mb-0"><i class="fas fa-thermometer-half me-3"></i>Monitoreo Inrows</h1>
+                            <p class="mb-0 fs-5">Registro de FPM, temperatura y observaciones</p>
+                        </div>
+                        <div class="text-end">
+                            <div class="badge bg-warning fs-6 p-2">
+                                <i class="fas fa-exclamation-triangle me-1"></i>Requiere Atención
+                            </div>
+                            <div class="mt-2">
+                                <small id="current-time">--</small>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="temperatura" class="form-label">Temperatura (°C)</label>
-                        <input type="number" class="form-control" id="temperatura" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="observaciones" class="form-label">Observaciones</label>
-                        <textarea class="form-control" id="observaciones" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Registrar</button>
-                </form>
+                </div>
             </div>
         </div>
 
-        <!-- Tabla para mostrar datos de inrows registrados -->
-        <div class="card">
-            <div class="card-header">Datos Registrados de Inrows</div>
-            <div class="card-body">
-                <table class="table table-striped" id="inrows-table">
-                    <thead>
-                        <tr>
-                            <th scope="col">FPM</th>
-                            <th scope="col">Temperatura (°C)</th>
-                            <th scope="col">Observaciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Los datos se llenarán dinámicamente con JavaScript -->
-                    </tbody>
-                </table>
+        <!-- Formulario para registrar datos de inrows -->
+        <div class="row mb-4">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-danger text-white">
+                        <h4 class="mb-0"><i class="fas fa-plus-circle me-2"></i>Nuevo Registro de Inrow</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="inrows-form">
+                            <div class="mb-3">
+                                <label for="fpm" class="form-label"><i class="fas fa-wind me-1"></i>FPM (Flujo de aire)</label>
+                                <input type="number" class="form-control" id="fpm" placeholder="Ej: 1500" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="temperatura" class="form-label"><i class="fas fa-thermometer-three-quarters me-1"></i>Temperatura (°C)</label>
+                                <input type="number" class="form-control" id="temperatura" placeholder="Ej: 22.5" step="0.1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="observaciones" class="form-label"><i class="fas fa-comment me-1"></i>Observaciones</label>
+                                <textarea class="form-control" id="observaciones" rows="3" placeholder="Observaciones adicionales (opcional)"></textarea>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-danger btn-lg">
+                                    <i class="fas fa-save me-2"></i>Guardar Registro
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de Información -->
+            <div class="col-lg-6">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0"><i class="fas fa-info-circle me-2"></i>Información del Sistema</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info" role="alert">
+                            <h6><i class="fas fa-lightbulb me-2"></i>Parámetros Recomendados</h6>
+                            <ul class="mb-0">
+                                <li><strong>FPM:</strong> 1000-2000 (dependiendo del modelo)</li>
+                                <li><strong>Temperatura:</strong> 18-27°C (rango ideal)</li>
+                                <li><strong>Temperatura crítica:</strong> >35°C</li>
+                            </ul>
+                        </div>
+                        <div class="mt-3">
+                            <h6><i class="fas fa-history me-2"></i>Último Registro</h6>
+                            <p class="text-muted" id="ultimo-registro">Sin registros previos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de Registros -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0"><i class="fas fa-table me-2"></i>Historial de Registros</h4>
+                        <button class="btn btn-outline-danger btn-sm" onclick="limpiarDatosInrows()">
+                            <i class="fas fa-trash me-1"></i>Limpiar Datos
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th><i class="fas fa-clock me-1"></i>Fecha/Hora</th>
+                                        <th><i class="fas fa-wind me-1"></i>FPM</th>
+                                        <th><i class="fas fa-thermometer-half me-1"></i>Temperatura</th>
+                                        <th><i class="fas fa-comment me-1"></i>Observaciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="inrows-table-body">
+                                    <!-- Los registros se cargarán aquí dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="no-data-inrows" class="text-center py-4">
+                            <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+                            <h5 class="text-muted">No hay registros de Inrows</h5>
+                            <p class="text-muted">Agregue el primer registro usando el formulario anterior</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Sistema de Monitoreo Centro de Datos - Módulo de Inrows</p>
+        </div>
+    </footer>
 
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/navbar-loader.js"></script>
     <script src="../js/modules/inrows.js"></script>
     <script>
-        // Cargar el contenido de la barra de navegación y pie de página
-        $(function(){
-            $("#navbar-placeholder").load("navbar.html");
-            $("#footer-placeholder").load("footer.html");
-        });
+        // Actualizar hora actual
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleString('es-ES');
+        }
+
+        updateTime();
+        setInterval(updateTime, 60000);
+        
+        // Función para limpiar datos
+        function limpiarDatosInrows() {
+            if (confirm('¿Está seguro de eliminar todos los registros de Inrows? Esta acción no se puede deshacer.')) {
+                localStorage.removeItem('inrows_records');
+                document.getElementById('inrows-table-body').innerHTML = '';
+                document.getElementById('no-data-inrows').style.display = 'block';
+                document.getElementById('ultimo-registro').textContent = 'Sin registros previos';
+                
+                // Mostrar notificación
+                const notificacion = document.createElement('div');
+                notificacion.className = 'alert alert-success alert-dismissible fade show position-fixed';
+                notificacion.style.cssText = 'top: 20px; right: 20px; z-index: 1050;';
+                notificacion.innerHTML = `
+                    <i class="fas fa-check-circle me-2"></i>Datos de Inrows eliminados correctamente
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.body.appendChild(notificacion);
+                
+                setTimeout(() => {
+                    if (notificacion.parentNode) {
+                        notificacion.parentNode.removeChild(notificacion);
+                    }
+                }, 3000);
+            }
+        }
     </script>
 </body>
 </html>

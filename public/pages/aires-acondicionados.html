@@ -6,42 +6,200 @@
     <title>Aires Acondicionados - Monitoreo Centro de Datos</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/pages/aires-acondicionados.css">
-    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <div id="navbar-placeholder"></div>
+    <!-- Navbar se cargará dinámicamente aquí -->
 
-    <div class="container mt-5">
-        <h1>Aires Acondicionados</h1>
-        <form id="aires-acondicionados-form">
-            <div class="mb-3">
-                <label for="tiempoUso" class="form-label">Tiempo de Uso (horas)</label>
-                <input type="number" class="form-control" id="tiempoUso" required>
-            </div>
-            <div class="mb-3">
-                <label for="observaciones" class="form-label">Observaciones</label>
-                <textarea class="form-control" id="observaciones" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Registrar</button>
-        </form>
+    <div class="container mt-5 pt-4">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><i class="fas fa-wind"></i> Aires Acondicionados</li>
+            </ol>
+        </nav>
 
-        <h2 class="mt-5">Registro de Aires Acondicionados</h2>
-        <div id="aires-acondicionados-table-placeholder"></div>
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="bg-primary text-white p-4 rounded shadow">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h1 class="display-6 mb-0"><i class="fas fa-wind me-3"></i>Aires Acondicionados</h1>
+                            <p class="mb-0 fs-5">Control y monitoreo de sistemas de climatización</p>
+                        </div>
+                        <div class="text-end">
+                            <div class="badge bg-success fs-6 p-2">
+                                <i class="fas fa-check-circle me-1"></i>Sistema Operativo
+                            </div>
+                            <div class="mt-2">
+                                <small id="current-time">--</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario de Registro -->
+        <div class="row mb-4">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0"><i class="fas fa-plus-circle me-2"></i>Nuevo Registro</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="aires-acondicionados-form">
+                            <div class="mb-3">
+                                <label for="equipo" class="form-label"><i class="fas fa-snowflake me-1"></i>Equipo</label>
+                                <select class="form-select" id="equipo" required>
+                                    <option value="">Seleccionar equipo...</option>
+                                    <option value="inrow-1">InRow 1</option>
+                                    <option value="inrow-2">InRow 2</option>
+                                    <option value="inrow-3">InRow 3</option>
+                                    <option value="ventilador-1">Ventilador 1</option>
+                                    <option value="ventilador-2">Ventilador 2</option>
+                                    <option value="ventilador-3">Ventilador 3</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="tiempo-uso" class="form-label"><i class="fas fa-clock me-1"></i>Tiempo de Uso</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="tiempo-uso" placeholder="Ej: 120" min="0" required>
+                                    <span class="input-group-text">horas</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="temperatura" class="form-label"><i class="fas fa-thermometer-half me-1"></i>Temperatura</label>
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="temperatura" placeholder="Ej: 22.5" step="0.1" required>
+                                    <span class="input-group-text">°C</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="observaciones" class="form-label"><i class="fas fa-comment me-1"></i>Observaciones</label>
+                                <textarea class="form-control" id="observaciones" rows="3" placeholder="Observaciones adicionales (opcional)"></textarea>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-save me-2"></i>Guardar Registro
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de Información -->
+            <div class="col-lg-6">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0"><i class="fas fa-info-circle me-2"></i>Información del Sistema</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info" role="alert">
+                            <h6><i class="fas fa-temperature-low me-2"></i>Parámetros Recomendados</h6>
+                            <ul class="mb-0">
+                                <li><strong>Temperatura ideal:</strong> 18-24°C</li>
+                                <li><strong>Humedad relativa:</strong> 40-60%</li>
+                                <li><strong>Mantenimiento preventivo:</strong> Cada 6 meses</li>
+                                <li><strong>Revisión de filtros:</strong> Mensual</li>
+                            </ul>
+                        </div>
+                        <div class="mt-3">
+                            <h6><i class="fas fa-history me-2"></i>Último Registro</h6>
+                            <p class="text-muted" id="ultimo-registro">Sin registros previos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de Registros -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0"><i class="fas fa-table me-2"></i>Historial de Registros</h4>
+                        <button class="btn btn-outline-primary btn-sm" onclick="limpiarDatosAires()">
+                            <i class="fas fa-trash me-1"></i>Limpiar Datos
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th><i class="fas fa-clock me-1"></i>Fecha/Hora</th>
+                                        <th><i class="fas fa-snowflake me-1"></i>Equipo</th>
+                                        <th><i class="fas fa-clock me-1"></i>Tiempo Uso</th>
+                                        <th><i class="fas fa-thermometer-half me-1"></i>Temperatura</th>
+                                        <th><i class="fas fa-comment me-1"></i>Observaciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="aires-table-body">
+                                    <!-- Los registros se cargarán aquí dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="no-data-aires" class="text-center py-4">
+                            <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+                            <h5 class="text-muted">No hay registros de Aires Acondicionados</h5>
+                            <p class="text-muted">Agregue el primer registro usando el formulario anterior</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Sistema de Monitoreo Centro de Datos - Módulo de Aires Acondicionados</p>
+        </div>
+    </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/navbar-loader.js"></script>
     <script src="../js/modules/aires-acondicionados.js"></script>
     <script>
-        // Cargar componentes
-        $(function(){
-            $("#navbar-placeholder").load("navbar.html");
-            $("#footer-placeholder").load("footer.html");
-            $("#aires-acondicionados-table-placeholder").load("tables/aires-acondicionados-table.html");
-        });
+        // Actualizar hora actual
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleString('es-ES');
+        }
+
+        updateTime();
+        setInterval(updateTime, 60000);
+        
+        // Función para limpiar datos
+        function limpiarDatosAires() {
+            if (confirm('¿Está seguro de eliminar todos los registros de Aires Acondicionados? Esta acción no se puede deshacer.')) {
+                localStorage.removeItem('aires_acondicionados_records');
+                document.getElementById('aires-table-body').innerHTML = '';
+                document.getElementById('no-data-aires').style.display = 'block';
+                document.getElementById('ultimo-registro').textContent = 'Sin registros previos';
+                
+                // Mostrar notificación
+                const notificacion = document.createElement('div');
+                notificacion.className = 'alert alert-success alert-dismissible fade show position-fixed';
+                notificacion.style.cssText = 'top: 20px; right: 20px; z-index: 1050;';
+                notificacion.innerHTML = `
+                    <i class="fas fa-check-circle me-2"></i>Datos de Aires Acondicionados eliminados correctamente
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.body.appendChild(notificacion);
+                
+                setTimeout(() => {
+                    if (notificacion.parentNode) {
+                        notificacion.parentNode.removeChild(notificacion);
+                    }
+                }, 3000);
+            }
+        }
     </script>
 </body>
 </html>

@@ -1,43 +1,38 @@
-body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
+/* Estilos específicos para la página de Lámparas de Emergencia */
+.bg-info {
+    background: linear-gradient(135deg, #17a2b8, #138496) !important;
 }
 
-.container {
-    margin-top: 20px;
+.btn-info {
+    background: linear-gradient(45deg, #17a2b8, #138496);
+    border: none;
+    transition: all 0.3s ease;
 }
 
-h1 {
-    color: #343a40;
-    margin-bottom: 20px;
+.btn-info:hover {
+    background: linear-gradient(45deg, #138496, #117a8b);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(23, 162, 184, 0.3);
 }
 
-.form-group {
-    margin-bottom: 15px;
+.table-responsive {
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
-.label {
-    font-weight: bold;
+#no-data-lamparas {
+    display: block;
 }
 
-.btn-submit {
-    background-color: #007bff;
-    color: white;
+/* Estilos para estados de funcionamiento */
+.text-success {
+    color: #28a745 !important;
 }
 
-.btn-submit:hover {
-    background-color: #0056b3;
+.text-danger {
+    color: #dc3545 !important;
 }
 
-.table {
-    margin-top: 20px;
-}
-
-.table th {
-    background-color: #007bff;
-    color: white;
-}
-
-.table td {
-    vertical-align: middle;
+.text-warning {
+    color: #ffc107 !important;
 }
